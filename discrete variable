@@ -1,0 +1,11 @@
+# -*- coding：utf-8 -*-
+# 利用pandas处理离散变量的技巧
+
+
+import pandas as pd
+
+x = pd.read_csv('train.csv')
+# 利用pandas.get_dummies处理离散变量是对每个不同变量如female，male形成一个新的列
+x.get_dummies(x['Sex'])
+# 当离散变量有数值意义时，可以通过映射进行转换map（）
+x.Sex.map({'female'：1, 'male':2})
